@@ -13,7 +13,7 @@
 | 章节 | 内容进度 | 内容完结 | 翻译完结|
 |-------|------|:------:|:------:|
 | [Preface](preface.asciidoc) | #### |||
-| [Glossary](glossary.asciidoc) | ######## | :heavy_check_mark: ||
+| [术语速查](glossary.asciidoc) | ######## | :heavy_check_mark: ||
 | [What is Ethereum](what-is.asciidoc) | ######### | :heavy_check_mark: ||
 | [Introduction](intro.asciidoc) | ############# | :heavy_check_mark: ||
 | [Ethereum Clients](clients.asciidoc) | ########## | :heavy_check_mark: ||
