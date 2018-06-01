@@ -1,7 +1,7 @@
 [preface]
-== Quick Glossary
+== 术语速查表
 
-This quick glossary contains many of the terms used in relation to Ethereum. These terms are used throughout the book, so bookmark this for quick reference.
+这个快速词汇包含了与Ethereum有关的许多术语。这些术语在整本书中都有使用，所以请将其作为参考。
 
 ////
 
@@ -15,22 +15,20 @@ Comment from Gitter:
 
 ////
 
-Account::
-    An object containing an address, balance, and nonce, and optional storage and code. An account can be a contract account or an EOA (externally owned account).
+Account（账户）::
+    一个包含地址、余额和nonce，以及可选的存储和代码的对象。帐户可以是合约帐户或EOA(外部拥有的帐户)。
 
-Address::
-    Most generally, this represents an EOA or contract, which can receive (destination address) or send (source address) transactions on the blockchain. More specifically, it is the right-most 160 bits of a Keccak hash of an ECDSA public key.
+Address（地址）::
+    通常，这表示一个可以在区块链上接收(目的地地址)或发送(源地址)事务的EOA或合约。具体来说，它是ECDSA公钥的Keccak散列中最右边的160位。
 
-Assert::
-    In Solidity assert(false) compiles to *0xfe*, which is an invalid opcode, using up all remaining gas, and reverting all changes.
-    When an assert() statement fails, something very wrong and unexpected should be happening, and you will need to fix your code.
-    You should use assert to avoid conditions which should never, ever occur.
+Assert（断言）::
+    在Solidity assert(false)中，将其编译为0xfe，这是一个无效的操作码，会耗尽所有剩余的gas，并恢复所有的更改。当assert()语句失败时，表示将会发大的问题或者异常，这时您需要修复代码。您应该使用assert来避免不应该发生的情况。
 
-Big-endian::
-    A positional number representation where the most significant digit is first. The opposite of little-endian, where the least significant digit is first.
+Big-endian（大端）::
+    一种位置数字表示，其中高位数字在第一位。与little-endian（小端）相反，最低位数字在第一位。
 
 BIP::
-    Bitcoin Improvement Proposals.  A set of proposals that members of the Bitcoin community have submitted to improve Bitcoin. For example, BIP-21 is a proposal to improve the Bitcoin uniform resource identifier (URI) scheme.
+    比特币的改进提议。比特币社区的成员们提交了一套改进比特币的提议。例如，BIP-21提议改进比特币统一资源标识(URI)方案。
 
 Block::
     A block is a collection of required information (a block header) about the comprised transactions, and a set of other block headers known as ommers.  It is added to the Ethereum network by miners.
