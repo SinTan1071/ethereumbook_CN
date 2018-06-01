@@ -19,7 +19,7 @@ Account（账户）::
     一个包含地址、余额和nonce，以及可选的存储和代码的对象。帐户可以是合约帐户或EOA(外部拥有的帐户)。
 
 Address（地址）::
-    通常，这表示一个可以在区块链上接收(目的地地址)或发送(源地址)事务的EOA或合约。具体来说，它是ECDSA公钥的Keccak散列中最右边的160位。
+    通常，这表示一个可以在区块链上接收(目的地地址)或发送(源地址)交易的EOA或合约。具体来说，它是ECDSA公钥的Keccak散列中最右边的160位。
 
 Assert（断言）::
     在Solidity assert(false)中，将其编译为0xfe，这是一个无效的操作码，会耗尽所有剩余的gas，并恢复所有的更改。当assert()语句失败时，表示将会发大的问题或者异常，这时您需要修复代码。您应该使用assert来避免不应该发生的情况。
@@ -30,14 +30,14 @@ Big-endian（大端）::
 BIP::
     比特币的改进提议。比特币社区的成员们提交了一套改进比特币的提议。例如，BIP-21提议改进比特币统一资源标识(URI)方案。
 
-Block::
-    A block is a collection of required information (a block header) about the comprised transactions, and a set of other block headers known as ommers.  It is added to the Ethereum network by miners.
+Block（区块）::
+    一个区块就是所包含的交易列表的必要信息（区块头）的集合，以及一组称为ommers的区块头。它被矿工添加到以太网络。
 
-Blockchain::
-	A sequence of blocks validated by the proof-of-work system, each linking to its predecessor all the way to the genesis block. This varies from the Bitcoin protocol in that it does not have a block size limit; it instead uses varying gas limits.
+Blockchain（区块链）::
+	由PoW(工作量证明)系统验证的一组区块序列，每个块都连接到它之前的块，一直到创世块。这与比特币协议有所不同，因为它没有对区块大小进行限制，而是对gas的使用进行限制。
 
-Bytecode::
-
+Bytecode（二进制码）::
+	
 Byzantium Fork::
   Byzantium is the first of two hard forks for Metropolis development stage. It included EIP-649: Metropolis Difficulty Bomb Delay and Block Reward Reduction, where the Ice Age (see below) was delayed by 1 year, and the block reward was reduced from 5 to 3 ether.
 
