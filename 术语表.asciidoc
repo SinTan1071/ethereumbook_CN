@@ -37,8 +37,8 @@ Blockchain（区块链）::
 	由PoW(工作量证明)系统验证的一组区块序列，每个块都连接到它之前的块，一直到创世块。这与比特币协议有所不同，因为它没有对区块大小进行限制，而是对gas的使用进行限制。
 
 Bytecode（二进制码）::
-	
-Byzantium Fork::
+	 
+Byzantium Fork（拜占庭分叉）::
   Byzantium is the first of two hard forks for Metropolis development stage. It included EIP-649: Metropolis Difficulty Bomb Delay and Block Reward Reduction, where the Ice Age (see below) was delayed by 1 year, and the block reward was reduced from 5 to 3 ether.
 
 Compiling::
