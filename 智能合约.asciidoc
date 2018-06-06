@@ -106,5 +106,48 @@ solc, the solidity compiler commandline interface
 Version: 0.4.21+commit.dfe3193c.Linux.g++
 ----
 
+安装Solidity的方式很多，取决于您的系统以及其他需求，其中您可以通过编译源代码的方式进行安装。更多细节请查阅：
+
+https://github.com/ethereum/solidity
+
+==== Development environment
+
+您可以使用任何的文本编辑器加上命令行下的 +solc+ 编译器进行Solidity开发。当然，目前已经有很多编辑器帮助您方便的进行Solidity的开发，比如可以使用安装了语法高亮插件的Atom编辑器。
+
+除此之外，还有一些基于web的在线开发环境，比如Remix IDE  (https://remix.ethereum.org/), 或者 EthFiddle (https://ethfiddle.com/)。
+
+使用能让你高效工作的工具。但最终，Solidity程序只是纯文本文件。虽然花哨的编辑器和开发环境可以使事情变得更简单，但是您只需要一个简单的文本编辑器，例如vim (Linux/Unix)、TextEdit (MacOS)甚至NotePad (Windows)。
+您只需要将编写好的文档保存为 +.sol+ 后缀的格式，Solidity便会自动识别它并将它编译成Solidity程序。
+
+==== 编写一个简单的Solidity程序
+
+在 <<intro>> 中，我们编写了第一个叫做 +Faucet+ 的Solidity程序。当我们第一次构建 +Faucet+ 时，我们使用Remix IDE编译和部署合约。在本节中，我们将回顾、改进并润色它。
+
+我们之前编写的程序看起来是这样的：
+
+.Faucet.sol : A Solidity contract implementing a faucet
+[source,solidity,linenums]
+----
+include::code/Solidity/Faucet.sol[]
+----
+
+从 <<make_it_better>> 一章开始，我们会在这个实例的基础上进行构建。
+
+==== 使用Solidity编译器 （solc）
+
+现在，我们将在命令行中使用 +solc+ 编译我们写好的合约。+solc+ 编译器提供了很多编译选项，我们可以通过使用 +-help+ 参数来查看这些选项。
+
+本例中，我们使用 +--bin+ 和 +--optimize+ 参数来生成经过优化的合约的二进制文件。
+
+[[compile_Faucet_with_solc]]
+.使用 solc 编译 Faucet.sol
+----
+$ solc --optimize --bin Faucet.sol
+======= Faucet.sol:Faucet =======
+Binary:
+6060604052341561000f57600080fd5b60cf8061001d6000396000f300606060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416632e1a7d4d81146040575b005b3415604a57600080fd5b603e60043567016345785d8a0000811115606357600080fd5b73ffffffffffffffffffffffffffffffffffffffff331681156108fc0282604051600060405180830381858888f19350505050151560a057600080fd5b505600a165627a7a723058203556d79355f2da19e773a9551e95f1ca7457f2b5fbbf4eacf7748ab59d2532130029
+----
+
++solc+ 输出的结果是用十六进制序列化后的二进制文件，这个二进制文件就是要提交（部署）给以太坊的二进制文件。
 
 
