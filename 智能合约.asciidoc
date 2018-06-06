@@ -56,4 +56,34 @@ Bamboo:: 一种新开发的语言，受Erlang的影响，具有显式的状态�
 
 正如您看到的，有许多语言可供选择。然而到目前为止，Solidity是最受欢迎的，因为它是以太坊事实上的官方语言，甚至一些其他的基于EVM的区块链也使用它。我们将花费大部分时间使用solid，但也将探索其他高级语言中的一些示例，以了解它们的不同哲学。
 
+[[building_a_smart_contract_sec]]
+=== 使用Solidity创建一个智能合约
+
+From Wikipedia:
+
+[quote, "Wikipedia entry for Solidity"]
+Solidity is a "contract-oriented" programming language for writing smart contracts. It is used for implementing smart contracts on various blockchain platforms. It was developed by Gavin Wood, Christian Reitwiessner, Alex Beregszaszi, Liana Husikyan, Yoichi Hirai and several former Ethereum core contributors to enable writing smart contracts on blockchain platforms such as Ethereum.
+
+Solidity is developed and currently maintained by a team of developers as the Solidity project on GitHub:
+
+https://github.com/ethereum/solidity
+
+The main "product" of the Solidity project is the _Solidity Compiler (solc)_ which converts programs written in the Solidity language to EVM bytecode, as well as producing other artefacts such as an Application Binary Interface (ABI). Each version of the Solidity compiler corresponds to and compiles a specific version of the Solidity language.
+
+Solidity项目最重要的“产品”就是 _Solidity编译器（solc）_，solc编译器将solidity代码转换成EVM虚拟机执行的二进制代码bytecode，同时输出代码相关的应用二进制借口（ABI）等。每个版本的编译器都对应特定版本的Solidity语言。
+
+==== Solidity版本选择
+
+Solidity编译器版本遵循 _semantic versioning_ （https://semver.org/）版本控制规则，由使用点号分隔的三个数字构成：
++MAJOR.MINOR.PATCH+ 。其中“MAJOR”字段标识主要版本更新以及_非后向兼容_的修改，“MINOR”表示后向兼容特性的添加，“PATCH”表示bug修改或者安全问题相关修改。
+
+目前为止，Solidity的最新版本为+0.4.21+，其中+0.4+是他的“MAJOR”版本号，21是“MINOR”版本号，最后一部分是发布的编号。预计很快“MAJOR”为0.5的版本就会发布。
+
+正如<<intro>>中所述, 您的智能合约中可以使用用一个+pragma+指令来指定用于编译您的合约的最小以及最大的编译器版本号。
+
+由于Solidity项目更新很快，所以请尽量使用最新的版本号。
+
+
+
+
 
