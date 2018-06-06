@@ -68,8 +68,6 @@ Solidity is developed and currently maintained by a team of developers as the So
 
 https://github.com/ethereum/solidity
 
-The main "product" of the Solidity project is the _Solidity Compiler (solc)_ which converts programs written in the Solidity language to EVM bytecode, as well as producing other artefacts such as an Application Binary Interface (ABI). Each version of the Solidity compiler corresponds to and compiles a specific version of the Solidity language.
-
 Solidity项目最重要的“产品”就是 _Solidity编译器（solc）_，solc编译器将solidity代码转换成EVM虚拟机执行的二进制代码bytecode，同时输出代码相关的应用二进制借口（ABI）等。每个版本的编译器都对应特定版本的Solidity语言。
 
 ==== Solidity版本选择
@@ -83,7 +81,30 @@ Solidity编译器版本遵循 _semantic versioning_ （https://semver.org/） �
 
 由于Solidity项目更新很快，所以请尽量使用最新的版本号。
 
+==== 下载/安装
 
+Solidity编译器有多种下载和安装的方式，您可以通过下载二进制安装包，或者通过编译其源代码的方式来安装。具体介绍，请查看一下网站中的相关文档：
+
+https://solidity.readthedocs.io/en/latest/installing-solidity.html
+
+在 <<在ubuntu中安装Solidity>> 部分，我们将使用 +apt+ 包管理软件在Ubuntu/Debian系统上安装最新的Solidity编译器。
+
+[[install_solidity_ubuntu]]
+.使用 apt 包管理软件在Ubunti/Debian上安装Solidity
+[source, bash]
+----
+$ sudo add-apt-repository ppa:ethereum/ethereum
+$ sudo apt update
+$ sudo apt install solc
+----
+
+安装完 +solc+ 后，可以用以下命令验证安装是否成功：
+
+----
+$ solc --version
+solc, the solidity compiler commandline interface
+Version: 0.4.21+commit.dfe3193c.Linux.g++
+----
 
 
 
