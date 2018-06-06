@@ -74,12 +74,12 @@ Solidity项目最重要的“产品”就是 _Solidity编译器（solc）_，sol
 
 ==== Solidity版本选择
 
-Solidity编译器版本遵循 _semantic versioning_ （https://semver.org/）版本控制规则，由使用点号分隔的三个数字构成：
-+MAJOR.MINOR.PATCH+ 。其中“MAJOR”字段标识主要版本更新以及_非后向兼容_的修改，“MINOR”表示后向兼容特性的添加，“PATCH”表示bug修改或者安全问题相关修改。
+Solidity编译器版本遵循 _semantic versioning_ （https://semver.org/） 版本控制规则，由使用点号分隔的三个数字构成：
++MAJOR.MINOR.PATCH+ 。其中“MAJOR”字段标识主要版本更新以及 _非后向兼容_ 的修改，“MINOR”表示后向兼容特性的添加，“PATCH”表示bug修改或者安全问题相关修改。
 
-目前为止，Solidity的最新版本为+0.4.21+，其中+0.4+是他的“MAJOR”版本号，21是“MINOR”版本号，最后一部分是发布的编号。预计很快“MAJOR”为0.5的版本就会发布。
+目前为止，Solidity的最新版本为 +0.4.21+ ，其中 +0.4+ 是他的“MAJOR”版本号，21是“MINOR”版本号，最后一部分是发布的编号。预计很快“MAJOR”为0.5的版本就会发布。
 
-正如<<intro>>中所述, 您的智能合约中可以使用用一个+pragma+指令来指定用于编译您的合约的最小以及最大的编译器版本号。
+正如<<intro>>中所述, 您的智能合约中可以使用用一个 +pragma+ 指令来指定用于编译您的合约的最小以及最大的编译器版本号。
 
 由于Solidity项目更新很快，所以请尽量使用最新的版本号。
 
