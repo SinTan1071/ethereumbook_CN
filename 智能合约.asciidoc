@@ -150,4 +150,27 @@ Binary:
 
 +solc+ 输出的结果是用十六进制序列化后的二进制文件，这个二进制文件就是要提交（部署）给以太坊的二进制文件。
 
+[[eth_contract_abi_sec]]
+=== 以太坊智能合约应用二进制接口 (ABI)
+
+在计算机软件中，应用程序二进制接口(ABI)是两个程序模块之间的接口;通常，一个在机器代码级别，另一个在用户运行的程序级别。ABI定义了如何在 *机器代码* 中访问数据结构和函数;不要把其与API混淆，API将这种访问定义为高级的、通常是人类可读的格式，如 *源代码* 。因此，ABI是编码和解码数据进出机器码的主要方式。
+
+在以太坊中，ABI用来给EVM进行合约调用的编码以及从交易中读取数据。
+
+在Ethereum中，ABI用于对EVM的合同调用进行编码，并从交易中读取数据。ABI的目的是定义可以调用契约中的哪些函数，并描述函数如何接受参数和返回数据。
+
+一个契约的ABI的JSON格式是由一个描述函数的数组(参见 << ty_function >> )和事件(参见 << ty_events>> )给出的。函数的描述是一个JSON对象，包含“类型”、“名称”、“输入”、“输出”、“常量”和“应付”的字段。事件描述对象具有“类型”、“名称”、“输入”和“匿名”的字段。
+
+我们使用 +solc+ 命令行编译器为我们的 +Faucet.sol+ 生成ABI:
+
+----
+solc --abi Faucet.sol
+======= Faucet.sol:Faucet =======
+Contract JSON ABI
+[{"constant":false,"inputs":[{"name":"withdraw_amount","type":"uint256"}],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"}]
+----
+
+如您所见，编译器生成一个JSON对象，描述由 +Faucet.sol+ 定义的两个函数。这个JSON对象可以被任何希望在部署后访问 +Faucedt+ 合同的应用程序调用。使用ABI(一个应用程序，如钱包或DApp浏览器)，可以构造调用 +Faucet +中的函数的交易，并使用正确的参数和参数类型。例如，钱包会知道，要调用函数 +withdraw+ ，它必须提供一个 +uint256+ 参数，名为  +withdraw_amount+ 。钱包可以提示用户提供该值，然后创建一个对其进行编码并执行 +withdraw+ 函数的交易。
+
+应用程序与合约交互所需要的只是一个ABI和部署合约的地址。
 
