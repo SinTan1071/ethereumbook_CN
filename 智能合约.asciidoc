@@ -170,7 +170,21 @@ Contract JSON ABI
 [{"constant":false,"inputs":[{"name":"withdraw_amount","type":"uint256"}],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"}]
 ----
 
-如您所见，编译器生成一个JSON对象，描述由 +Faucet.sol+ 定义的两个函数。这个JSON对象可以被任何希望在部署后访问 +Faucedt+ 合同的应用程序调用。使用ABI(一个应用程序，如钱包或DApp浏览器)，可以构造调用 +Faucet +中的函数的交易，并使用正确的参数和参数类型。例如，钱包会知道，要调用函数 +withdraw+ ，它必须提供一个 +uint256+ 参数，名为  +withdraw_amount+ 。钱包可以提示用户提供该值，然后创建一个对其进行编码并执行 +withdraw+ 函数的交易。
+如您所见，编译器生成一个JSON对象，描述由 +Faucet.sol+ 定义的两个函数。这个JSON对象可以被任何希望在部署后访问 +Faucedt+ 合同的应用程序调用。使用ABI(一个应用程序，如钱包或DApp浏览器)，可以构造调用 +Faucet+ 中的函数的交易，并使用正确的参数和参数类型。例如，钱包会知道，要调用函数 +withdraw+ ，它必须提供一个 +uint256+ 参数，名为  +withdraw_amount+ 。钱包可以提示用户提供该值，然后创建一个对其进行编码并执行 +withdraw+ 函数的交易。
 
 应用程序与合约交互所需要的只是一个ABI和部署合约的地址。
+
+[[solidity_pragma]]
+==== Solidity编译器和语言版本的选择
+
+正如我们在 <<compile_Faucet_with_solc>> 中所看到的，我们的 +Faucet+ 合约成功地使用Solidity 0.4.21进行编译。但是如果我们使用的是另一个版本的编译器呢? Solidity语言还在不断的进化，因此可能会带来意想不到的情况。我们的交易相当简单，但是如果我们的程序使用的特性只是在Solidity版本 +0.4.19+ 中添加的，并且我们试图用+0.4.18+来编译它，会怎么样呢?
+
+为了解决这些问题，Solidity提供了一个名为 _version pragma_ 的 _编译器指令_ ，它指示编译器该程序期望一个特定的编译器(和语言)版本。让我们来看一个例子:
+
+[[compiler_version]]
+----
+pragma solidity ^0.4.19;
+----
+
+
 
